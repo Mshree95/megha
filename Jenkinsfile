@@ -1,15 +1,30 @@
 pipeline {
-    agent none
+    agent {
+        label 'slave1'
+    }
+ 
     stages {
-        stage('Example') {
-            agent any
-            options {
-                // Timeout counter starts BEFORE agent is allocated
-                timeout(time: 1, unit: 'SECONDS')
-            }
-            steps {
-                echo 'Hello World'
-            }
-        }
+       stage ('BUILD') {
+           steps {
+                sh 'sleep 5'
+           }
+       } 
+       
+       stage ('TEST') {
+           steps {
+                sh 'sleep 5'
+           }
+       }
+        
+       stage ('DEPLOY') {
+           steps {
+                sh 'sleep 5'
+           }
+       }  
+       stage ('DEPLOY1') {
+           steps {
+                sh 'sleep 5'
+           }
+       }     
     }
 }
