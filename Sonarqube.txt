@@ -34,6 +34,10 @@ A plug-in is a piece of software that adds new features or extends functionality
 **************************************
 
 Rolling update: Rolling release, also known as rolling update or continuous delivery, is a concept in software development of frequently delivering updates to applications. 
+The rolling update strategy is a gradual process that allows you to update your k8s s/y with only a minor effect on performance and no downtime.
+In this strategy, The deployments select a pod with an old programming, deactivate it, and create an updated pod to replace it. The deployments repeat this process until no outdated pods remain.
+
+the advantage is the update is applied pod by pod so the greater s/y can remain active.
 
 libk:https://medium.com/codex/kubernetes-deployment-rolling-updates-and-rollbacks-explained-e3efa6557368
 
@@ -43,9 +47,11 @@ The Rolling update uses two important parameters. They are listed below.
 
 2. maxUnavailable
 
-1. maxSurge => Here we assigned 25%. This ensures at most 125% of the desired number of Pods are up and running. Assume we have four Pods. So the 25% is equal to one Pod. This ensures 5 Pods are up and running if the traffic increases.
+1. maxSurge => Here we assigned 25%. This ensures at most 125% of the desired number of Pods are up and running. 
+Assume we have four Pods. So the 25% is equal to one Pod. This ensures 5 Pods are up and running if the traffic increases.
 
-2. maxUnavailable => Here we assigned 25%. This ensures at most 75% of the desired number of Pods are up and running. Assume we have four Pods. So the 25% is equal to one Pod. This ensures a minimum of three Pods are up and running always.
+2. maxUnavailable => Here we assigned 25%. This ensures at most 75% of the desired number of Pods are up and running. 
+Assume we have four Pods. So the 25% is equal to one Pod. This ensures a minimum of three Pods are up and running always.
 
 *************************************************************************
 Rollout: The ability to deploy lates minor version (bugfix, hotfix, minor feature, enhancement) without downtime. Rollback: The ability to restore back the older working version in case something goes wrong.
