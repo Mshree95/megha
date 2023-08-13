@@ -49,11 +49,33 @@ The Rolling update uses two important parameters. They are listed below.
 
 1. maxSurge => Here we assigned 25%. This ensures at most 125% of the desired number of Pods are up and running. 
 Assume we have four Pods. So the 25% is equal to one Pod. This ensures 5 Pods are up and running if the traffic increases.
+only a certain  number of pods created above the desired number of pods
 
 2. maxUnavailable => Here we assigned 25%. This ensures at most 75% of the desired number of Pods are up and running. 
 Assume we have four Pods. So the 25% is equal to one Pod. This ensures a minimum of three Pods are up and running always.
+only certain number of pods are  unavailable during an update
+
+both values can be desired no or percenrtage of desired pods
+
+ex:max number of pods available: replica + max surge 4+1 =5
+min: replica - max unavailable 4-1=3
+i.e minimum 3 pods will be running during an update.
 
 *************************************************************************
 Rollout: The ability to deploy lates minor version (bugfix, hotfix, minor feature, enhancement) without downtime. Rollback: The ability to restore back the older working version in case something goes wrong.
 
 ***************************************************************************
+Recreate: aLl the pods are killed all at once and replaced all at once with the new ones
+********************************************
+Edge location:Edge Location is the Data Center used to deliver content fast to your users. It is the site that is nearest your users.
+CloudFront delivers your content through a worldwide network of data centers called edge locations. When a user requests content that you're serving with CloudFront, the request is routed to the edge location that provides the lowest latency (time delay), so that content is delivered with the best possible performance.
+
+
+What is the difference between CDN and edge location?
+The content delivery network has been around for a long time and is really just an early version of edge computing. The main difference is that a CDN focuses on transmitting cached data, while edge computing supports many other types of computing like live streaming, gaming, and AI
+***********************************************************
+
+A Docker registry is a system for versioning, storing and distributing Docker images. DockerHub is a hosted registry used by default when installing the Docker engine, but there are other hosted registries available for public use such as AWS and Google's own registries.
+
+ a registry is a collection of repositories, while repositories hold a collection of related images.
+************************************
