@@ -79,3 +79,28 @@ A Docker registry is a system for versioning, storing and distributing Docker im
 
  a registry is a collection of repositories, while repositories hold a collection of related images.
 ************************************
+Stateful Applications 
+    - User session data is saved on the server side.
+    - if the server goes down, it is difficult to transfer the session data to another server. 
+    - This type of application will not work, if we want to implement autoscaling.
+    - Stateful applications are suitable for scenarios where data persistence and strong consistency are vital, such as databases, financial applications, Auth Gateways, and ERP systems.
+
+
+Stateless Applications
+    - user session data is never saved on the server side.
+    - using a common authentication gateway/client token method to validate the users once for multiple microservices.    
+
+Monolithic and Microservice architecture
+
+    Monolithic architecture
+        - A monolithic application has a single code base with multiple modules in it.
+        - It is a single build for the entire application.
+        - To make minor changes to an application, we need to rebuild and re-deploy the complete application.
+        - scaling is very challenging.
+
+    Microservice architecture 
+        - A microservice application is composed of small (micro) services. 
+        - Each service will have a different code base.
+        - Applications are divided into as small as possible sub-applications called services which are independent of each other and are called loosely coupled.    
+        - Each service can be managed separately and it is deployable separately.
+        - Services need not to share the same technology stack or frameworks.
