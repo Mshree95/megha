@@ -129,3 +129,51 @@ Labels are any key-value pairs that are used to identify that pod. The pod gets 
 Labels are the properties attached to each item/object.
 Selector helps us to filter the items/objects which have labels attached to them.
 **********************************************************************************
+AWS services:
+Amazon Web Services (AWS) offers a wide range of cloud computing services to meet various business needs. Here are some of the different types of AWS services:
+
+Compute Services: Amazon Elastic Compute Cloud (EC2): Provides scalable virtual servers in the cloud.AWS Lambda: Enables serverless computing, allowing you to run code without provisioning or managing servers.AWS Batch: Manages and runs batch computing workloads on the cloud.
+Storage and Content Delivery Services: Amazon Simple Storage Service (S3): Offers scalable object storage for data storage and retrieval.Amazon Elastic Block Store (EBS): Provides persistent block-level storage volumes for EC2 instances.Amazon Glacier: Provides long-term archival storage at a low cost.Amazon CloudFront: Delivers content globally with low latency through a content delivery network (CDN).
+Database Services: Amazon Relational Database Service (RDS): Manages relational databases like MySQL, PostgreSQL, Oracle, and others.Amazon DynamoDB: Offers a fully managed NoSQL database service.Amazon Redshift: Provides a fast, fully managed data warehouse for analytics.Amazon Neptune: A fully managed graph database service.
+Networking and Content Delivery Services: Amazon Virtual Private Cloud (VPC): Allows you to create isolated virtual networks in the AWS cloud.Amazon Route 53: Offers scalable domain name system (DNS) web services.AWS Direct Connect: Establishes a dedicated network connection between your premises and AWS.
+Analytics Services: Amazon Athena: Allows you to query data in Amazon S3 using standard SQL statements.Amazon Kinesis: Collects, processes, and analyzes real-time streaming data.Amazon QuickSight: Provides business intelligence and visualization tools.Amazon EMR: Offers big data processing and analytics using Apache Hadoop, Spark, and other frameworks.
+AI and Machine Learning Services: Amazon Rekognition: Provides image and video analysis with facial recognition and object detection.Amazon Polly: Converts text into lifelike speech.Amazon SageMaker: Offers a fully managed platform for building, training, and deploying machine learning models.Amazon Comprehend: Performs natural language processing to extract insights from text.
+*************************************************
+ps::The ‘ps’ command is a powerful tool for monitoring and managing processes in a Linux system. With examples provided in this article, you can easily use ‘ps’ command to view information about running processes, filter and sort output, and perform various other operations. By mastering ‘ps’ command, you can improve performance and stability of your Linux system, and troubleshoot problems more effectively.
+
+In Linux, ps -ef is a command that displays information about running processes on the system. The ps command stands for “process status,” and the -ef option tells the command to display information about all processes in a full format.
+
+The ps -ef command has numerous benefits, such as process identification, system monitoring, process management, security auditing, etc.
+If you wish to display the processes that are running in the current shell, then you should execute the “ps” command without any parameters as follows: ps
+
+Example 2: Display All the Currently Running Processes
+You can also list down all the currently running processes of your Linux system with the following command:ps -A
+
+Example 4: Display All the Processes Associated with a Particular User:  ps –u UserName
+Example 5: Display All the Processes Associated with a Particular User Group ps –fG UserGroupName
+
+The components of the ps -ef command are as follows:
+
+ps: The command to display information about running processes on the system.
+-e: An option to include all running processes in the output, including those not associated with the current terminal session.
+-f: An option to display the output in a full format, which includes additional details such as process owner, parent process ID (PPID), CPU usage, and memory usage.
+
+The output of the ps -ef command has several columns that are explained as follows:
+
+UID: The user ID (UID) who started the process.
+PID: The process ID (PID) of the running process.
+PPID: The parent process ID (PPID) of the running process.
+C: The CPU utilization of the process.
+STIME: The start time of the process.
+TTY: The controlling terminal associated with the process.
+TIME: The CPU time used by the process.
+
+o/p of particular process: ps -ef | grep <process name>
+Display the PIDs Only: ps -ef | awk '{print $2}'
+Display Process Sorted By a CPU Usage: ps -ef --sort=-%cpu
+****************************************************************************************************
+Blue green deployment:
+
+A blue/green deployment is a deployment strategy in which you create two separate, but identical environments. One environment (blue) is running the current application version and one environment (green) is running the new application version. Using a blue/green deployment strategy increases application availability and reduces deployment risk by simplifying the rollback process if a deployment fails. Once testing has been completed on the green environment, live application traffic is directed to the green environment and the blue environment is deprecated.
+
+A number of AWS deployment services support blue/green deployment strategies including Elastic Beanstalk, OpsWorks, CloudFormation, CodeDeploy, and Amazon ECS. Refer to Blue/Green Deployments on AWS for more details and strategies for implementing blue/green deployment processes for your application.
