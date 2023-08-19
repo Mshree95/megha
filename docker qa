@@ -1,0 +1,26 @@
+SCan docker image
+  clair is a tool port 6060
+
+Scanning a Docker image refers to the process of analyzing the contents of a Docker image to identify any potential security vulnerabilities, outdated software components, or other issues that could pose a risk to the security and stability of the containerized application. This practice is crucial to ensure that the images used in your containerized applications are safe and up-to-date.
+There are several tools and services available for scanning Docker images. One popular option is Clair, an open-source project that provides vulnerability scanning for containers. Clair can analyze Docker images and report on any known vulnerabilities present in the image's software components.
+
+Here's a general process for scanning a Docker image using Clair:
+Install Clair: You'll need to set up and configure the Clair server on your infrastructure. Instructions can usually be found in the Clair documentation.
+Pull the Docker Image: Retrieve the Docker image you want to scan from a container registry using the docker pull command. For example:
+
+docker pull <image_name>:<tag>
+Scan the Image: Once you have the image pulled locally, you can use Clair to scan it. There are various ways to do this, and the specific commands might differ depending on your setup. However, here's a general example:
+
+docker run -p 6060:6060 -e CLAIR_ADDR=<clair_server_ip>:6060 -d quay.io/coreos/clair-local-scan:v2.0.6
+This command runs a Clair scanner container and configures it to communicate with the Clair server.
+
+View Scan Results: After the scan is complete, you can view the scan results through the Clair web interface or API. The results will typically include information about vulnerabilities found in the image's software components, along with details about each vulnerability and recommendations for remediation.
+
+Remember that vulnerability scanning is just one aspect of ensuring the security of your containerized applications. It's important to also follow best practices for building Docker images, regularly update your images and software components, and implement proper security controls in your container environment.
+
+
+
+
+
+
+
