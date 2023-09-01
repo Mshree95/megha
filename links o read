@@ -11,3 +11,8 @@ https://www.techtarget.com/searchapparchitecture/tip/3-microservices-resiliency-
 
 modules
 https://docs.ansible.com/ansible/latest/module_plugin_guide/index.html
+
+
+To setup k8s cluster in ansible
+https://github.com/torgeirl/kubernetes-playbooks/tree/master/playbooks
+
